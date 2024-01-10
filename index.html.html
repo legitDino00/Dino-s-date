@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button.yes {
+      background-color: #4CAF50;
+      color: white;
+      margin-right: 10px;
+    }
+
+    button.no {
+      background-color: #FF0000;
+      color: white;
+      margin-left: 10px;
+    }
+  </style>
+  <title>Wanna Go Out On a date?</title>
+</head>
+<body>
+
+  <h1>Hey there!</h1>
+  <p>Do you want to see a surprise?</p>
+  <button class="yes" onclick="showSurprise()">Yes</button>
+
+  <div id="dateOptions" style="display:none;">
+    <p>Would you like to go out on a date?</p>
+    <button class="yes" onclick="showResponse('Yes')">Yes</button>
+    <button class="no" onclick="showResponse('No')">No</button>
+  </div>
+
+  <p id="response" style="display:none; color: #4CAF50; font-size: 20px; margin-top: 20px;"></p>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("dateOptions").style.display = "block";
+    }
+
+    function showResponse(answer) {
+      document.getElementById("response").innerHTML = answer === 'Yes' ? "Great! Looking forward to it!" : "Maybe next time!";
+      document.getElementById("response").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
